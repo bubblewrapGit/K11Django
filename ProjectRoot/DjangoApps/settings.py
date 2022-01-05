@@ -38,8 +38,9 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 프로젝트를 생성한 후 App을 추가하면 반드시 INSTALLED_APPS에 등록해야한다.
     형식 : 앱의이름(livepolls).파일명(apps).설정클래스명(apps.py의 클래스명)
 
-앱1 : 설문관리앱
+앱1 : 설문관리 앱
 앱2 : 템플릿 문법 맵
+앱3 : 도서관리 앱
 '''
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'livepolls.apps.LivepollsConfig',
     'tempapps.apps.TempappsConfig',
+    'books.apps.BooksConfig',
 ]
 
 MIDDLEWARE = [

@@ -12,6 +12,16 @@
 	<style>
     	div{border:0px solid blueviolet;}
     	*{font-size: 12px;}
+		.w100{width:100px;}
+		.w200{width:200px;}
+		/*
+		웹브라우저의 개발자모드에서 인스펙트를 통해 복사한 셀렉터를 통해 스타일을 부여한다.
+		table의 모든 th태그에 수평/수직 방향으로 가운데 정렬한다.
+		*/
+		#writeTable > tbody > tr > th{
+			text-align: center;
+			vertical-align: middle;
+		}
 	</style>
 </head>
 <body>
@@ -117,12 +127,24 @@
        	 
         	<form method="post">
                 {% csrf_token %}
-            	<table class="table table-bordered">
+            	<table class="table table-bordered" id="writeTable">
+					<colgroup>
+						<col width="20%"/>
+						<col width="*"/>
+					</colgroup>
                 <!-- Django를 통한 Form 만들기 -->
-
+				
+				<!-- 
                 {% block boardWrite %}
+					{{ form.as_table }}
                 {% endblock %}
+ 				-->
 
+				<tbody>
+
+					{{ form.as_table }}
+
+				</tbody>
             	</table>
 
             	<!-- 각종버튼 -->
